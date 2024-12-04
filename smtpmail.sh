@@ -1,17 +1,18 @@
 #!/bin/bash
 
 # Prompt user for inputs
-read -p "Enter email ID: " email_id
+read -p "Enter email ID (From): " email_id
 read -sp "Enter password: " password
 echo
 read -p "Enter hostname: " hostname
+read -p "Enter recipient email ID (To): " recipient_email
 
 # Define the PHP code template
 php_code_template="<?php
 require_once ('Mail.php');
 
 \$from = '$email_id'; //change this to your email address
-\$to = 'nikhil.suryanarayanan@hostingraja.in'; // change to address
+\$to = '$recipient_email'; // change to address
 \$subject = 'Checking mail with SMTP PHP'; // subject of mail
 \$body = \"Hello your mail function is working fine\"; //content of mail
 
